@@ -45,6 +45,11 @@ public class ChangePasswordActivity extends AppCompatActivity {
         //Carica i file salvati e gli inserire in un ArrayList
         mAccountList = SaveDataClass.loadData(sharedPreferences);
 
+        /*
+         * Controlla se il Bundle in parametro alla onCreate è null o contiene dati,
+         * se non li contiene gli acquisisce tramite l'intent, altrimenti gli
+         * preleva dal bundle
+         */
         if(savedInstanceState == null) {
             Intent externalIntent = getIntent();
             Serializable obj = externalIntent.getSerializableExtra(LoginActivity.ACCOUNT_EXTRA);
@@ -160,6 +165,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         passwordUser.setHorizontallyScrolling(true);
     }
 
+    // Inserisce l'account attuale in un bundle per essere preso all'onCreate
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);

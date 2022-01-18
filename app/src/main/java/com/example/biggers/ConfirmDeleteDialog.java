@@ -39,5 +39,6 @@ public class ConfirmDeleteDialog extends DialogFragment {
     public void onStop() {
         super.onStop();
         ((AdminManagerActivity) getActivity()).controlDelete(position);
+        ((AdminManagerActivity) getActivity()).setBooleanToFalse();
     }
 }
