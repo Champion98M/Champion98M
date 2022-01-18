@@ -1,7 +1,6 @@
 package com.example.biggers;
 
 import androidx.annotation.NonNull;
-
 import java.io.Serializable;
 
 /*

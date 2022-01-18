@@ -2,14 +2,10 @@ package com.example.biggers;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.KeyEvent;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.DialogFragment;
 
 public class ConfirmDeleteDialog extends DialogFragment {
@@ -17,7 +13,10 @@ public class ConfirmDeleteDialog extends DialogFragment {
     public static final String TAG = "ConfirmDeleteDialog";
     private int position;
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+    /*
+     * Crea il dialogo di richiesta di conferma
+     *  di eliminazione e i relativi pulsanti
+     */
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
@@ -35,6 +34,13 @@ public class ConfirmDeleteDialog extends DialogFragment {
                 .create();
     }
 
+    /*
+     * Il metodo onStop viene chiamato quando
+     * il dialogo viene chiuso il qualunque modo
+     * Chiama prima il metodo che controlla se
+     * l'eliminazione è confermata poi il metodo
+     * che resetta il boolean
+     */
     @Override
     public void onStop() {
         super.onStop();

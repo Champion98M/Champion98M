@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
@@ -24,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginButton;
     private TextView signUpText;
     private TextInputLayout usernameInput, passwordInput;
-        public static String ACCOUNT_EXTRA = "com.example.biggers.Account";
+    public static String ACCOUNT_EXTRA = "com.example.biggers.Account";
     private Account account;
     private long backPressedTime;
     private Toast exitToast;
