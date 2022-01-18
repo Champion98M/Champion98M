@@ -1,0 +1,58 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Biggers" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/background_color</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:datePickerDialogTheme">@style/DarkDatePickerDialog</item>
+        <item name="android:windowBackground">@color/background_color</item>
+
+    </style>
+
+    <style name="DarkDatePickerDialog" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="android:colorAccent">@color/darkGrey</item>
+        <item name="colorControlActivated">@color/neon_green</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/neon_green</item>
+        <item name="android:windowBackground">@drawable/date_picker_shape</item>
+        <item name="android:buttonBarButtonStyle">@style/DarkButtonStyleDatePicker</item>
+    </style>
+
+    <style name="DarkButtonStyleDatePicker" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/neon_green</item>
+    </style>
+
+
+    <style name="LoginTextsInputsStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">32dp</item>
+        <item name="boxCornerRadiusTopEnd">32dp</item>
+        <item name="boxCornerRadiusBottomStart">32dp</item>
+        <item name="boxCornerRadiusBottomEnd">32dp</item>
+        <item name="boxStrokeColor">@color/white</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/button_bg</item>
+        <item name="android:textColor">@drawable/button_text_color</item>
+        <item name="materialThemeOverlay">@style/ColorButtonThemeOverlay</item>
+    </style>
+
+    <style name="ColorButtonThemeOverlay">
+        <item name="colorPrimary">@color/white</item>
+    </style>
+
+    <style name="LogoutButtonStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">32dp</item>
+        <item name="android:textColor">@drawable/logout_button_text_color</item>
+        <item name="strokeColor">@color/text_color</item>
+        <item name="strokeWidth">2dp</item>
+    </style>
+</resources>

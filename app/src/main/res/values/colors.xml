@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="blue">#005ff0</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="orange">#Ff5b00</color>
+    <color name="darkOrange">#551e00</color>
+    <color name="grey">#292D3E</color>
+    <color name="darkGrey">#202331</color>
+    <color name="acidGreen">#33FF33</color>
+    <color name="green">#00b02a</color>
+    <color name="neon_green">#00f296</color>
+    <color name="pink">#f03dac</color>
+    <color name="darkPink">#461232</color>
+    <color name="oceanic_color">#0f111a</color>
+
+
+    <color name="mtrl_textinput_default_box_stroke_color">@color/darkGrey</color>
+    <color name="text_color">#2d313d</color>
+    <color name="clickable_text_color">@color/blue</color>
+    <color name="background_color">@color/white</color>
+    <color name="logout_button_color">#af0000</color>
+    <color name="confirm_green">@color/green</color>
+</resources>

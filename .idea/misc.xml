@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable-night/birthday_icon.xml" value="0.14907407407407408" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable-night/button_text_color.xml" value="0.1388888888888889" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable-night/date_picker_shape.xml" value="0.13055555555555556" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable-night/ic_android.xml" value="0.14907407407407408" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable-night/ic_launcher_background.xml" value="0.13796296296296295" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable-night/icon_username.xml" value="0.1388888888888889" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable-night/password_icon.xml" value="0.1388888888888889" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable-night/text_view_change_password.xml" value="0.14907407407407408" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14444444444444443" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/birthday_icon.xml" value="0.14907407407407408" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/button_bg.xml" value="0.125" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/button_text_color.xml" value="0.1388888888888889" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/confirm_password_icon.xml" value="0.13703703703703704" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/date_picker_shape.xml" value="0.17685185185185184" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/date_picker_shape_night.xml" value="0.17407407407407408" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/ic_android.xml" value="0.14074074074074075" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/ic_baseline_place_24.xml" value="0.13425925925925927" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14444444444444443" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/ic_search.xml" value="0.13796296296296295" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/icon_username.xml" value="0.1388888888888889" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/login_input_text_bg.xml" value="0.1388888888888889" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/logout_button_bg.xml" value="0.125" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/logout_button_text_color.xml" value="0.125" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/password_icon.xml" value="0.1388888888888889" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/text_view_change_password.xml" value="0.13703703703703704" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/drawable/username_icon.xml" value="0.17222222222222222" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout-land/account.xml" value="0.33" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout/account.xml" value="0.33" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout/account_card.xml" value="0.1" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout/activity_admin_manager.xml" value="0.25" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout/activity_change_password.xml" value="0.2" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout/activity_home.xml" value="0.28343949044585987" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout/activity_prova.xml" value="0.1" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout/activity_signup.xml" value="0.1" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout/menu_option.xml" value="0.16033434650455927" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout/prova.xml" value="0.10277777777777777" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout/switch_button.xml" value="0.16033434650455927" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout/switch_layout.xml" value="0.16033434650455927" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/layout/toolbar.xml" value="0.16033434650455927" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/menu/search_menu.xml" value="0.1" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/menu/theme_menu.xml" value="0.2777777777777778" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.13796296296296295" />
+        <entry key="..\:/Uni/IUM/Biggers/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.13796296296296295" />
+        <entry key="..\:/Users/Alessio/Desktop/Ide/Biggers/app/src/main/res/drawable/txt_bg.xml" value="0.15092592592592594" />
+        <entry key="..\:/Users/Alessio/Desktop/Ide/Biggers/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/Alessio/Desktop/Ide/Biggers/app/src/main/res/layout/activity_main.xml" value="0.11851851851851852" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
