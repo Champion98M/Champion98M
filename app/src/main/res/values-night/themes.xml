@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="android:datePickerDialogTheme">@style/DarkDatePickerDialog</item>
         <item name="android:windowBackground">@color/background_color</item>
-
+        <item name="android:navigationBarColor">@color/background_color</item>
     </style>
 
     <style name="DarkDatePickerDialog" parent="Theme.MaterialComponents.Light.Dialog">

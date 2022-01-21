@@ -6,16 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.List;
 
-public class AccountAdaper extends RecyclerView.Adapter<AccountAdaper.AccountViewHolder> implements Filterable {
+public class AccountAdaper extends RecyclerView.Adapter<AccountAdaper.AccountViewHolder> {
     public ArrayList<Account> mAccountList;
     public ArrayList<Account> mCopyaAccountList;
     private OnItemClickListener mListener;
@@ -55,7 +52,7 @@ public class AccountAdaper extends RecyclerView.Adapter<AccountAdaper.AccountVie
                     int position = getBindingAdapterPosition();
                     if (position != RecyclerView.NO_POSITION) {
                         listener.onAdminButtonClick(position);
-                        if(mAdminButton.getText().toString().equals("Abilita Admin")) {
+                        if (mAdminButton.getText().toString().equals("Abilita Admin")) {
                             mAdminButton.setText("Disabilita Admin");
                             imageView.setImageResource(R.drawable.crown_icon);
                         } else {
@@ -82,11 +79,11 @@ public class AccountAdaper extends RecyclerView.Adapter<AccountAdaper.AccountVie
 
     @Override
     public void onBindViewHolder(@NonNull AccountViewHolder holder, int position) {
-        Account currentAccount = mAccountList.get(position);
+        Account currentAccount = getAccountAt(position);
 
         holder.mUsernameTextView.setText(currentAccount.getUsername());
 
-        if(currentAccount.isAdmin()) {
+        if (currentAccount.isAdmin()) {
             holder.mAdminButton.setText("Disabilita Admin");
             holder.imageView.setImageResource(R.drawable.crown_icon);
         } else {
@@ -108,38 +105,7 @@ public class AccountAdaper extends RecyclerView.Adapter<AccountAdaper.AccountVie
         notifyDataSetChanged();
     }
 
-    @Override
-    public Filter getFilter() {
-        return accountFilter;
+    public ArrayList<Account> getList() {
+        return mAccountList;
     }
-
-    private final Filter accountFilter = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            List<Account> filteredList = new ArrayList<>();
-
-            if(constraint == null || constraint.length() == 0) {
-                filteredList.addAll(mCopyaAccountList);
-            } else {
-                String filterPattern = constraint.toString().toLowerCase().trim();
-
-                for(Account item : mCopyaAccountList) {
-                    if(item.getUsername().toLowerCase().contains(filterPattern)) {
-                        filteredList.add(item);
-                    }
-                }
-            }
-            FilterResults results = new FilterResults();
-            results.values = filteredList;
-
-            return results;
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            mAccountList.clear();
-            mAccountList.addAll((List) results.values);
-            notifyDataSetChanged();
-        }
-    };
 }

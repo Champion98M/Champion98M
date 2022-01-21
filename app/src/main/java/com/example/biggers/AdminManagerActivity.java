@@ -16,7 +16,6 @@ import android.widget.TextView;
 import com.google.android.material.textfield.TextInputLayout;
 import java.io.Serializable;
 import java.util.ArrayList;
-
 public class AdminManagerActivity extends AppCompatActivity {
 
     //Dichirazione variabili dei widget da recuperare nel layout xml
@@ -26,8 +25,11 @@ public class AdminManagerActivity extends AppCompatActivity {
     private TextView mEmptyListTextView;
     private Button mHomeButton;
 
-
+    //ArrayList principale contentente tutti gli utenti
     public ArrayList<Account> mAccountList = new ArrayList<>();
+    //ArrayList con solo gli utenti filtrati in base alla ricerca
+    public ArrayList<Account> mFilteredList = new ArrayList<>();
+
     private SharedPreferences sharedPreferences;
     public static final String SHARED = "shared";
 
@@ -38,8 +40,10 @@ public class AdminManagerActivity extends AppCompatActivity {
 
     public static final String BUNDLE_TAG = "Position";
 
-    //Boolean di controllo sull'eliminazione
+    //Boolean di controllo
     private boolean isDeleteConfirmed = false;
+    private boolean isFilterdListUsed = false;
+    private int realIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,12 +77,25 @@ public class AdminManagerActivity extends AppCompatActivity {
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 //Trova l'indice dell'item su cui si è fatto swipe
                 int position = viewHolder.getBindingAdapterPosition();
-                //Estrae l'account corrispondente dalla lista
-                mToChange = mAccountList.get(position);
-                //Chiama la funzione che esegue la rimozione dell'account
-                mAccountList.remove(position);
+
+                /*
+                 * Controlla ed esegue l'if se l'utente ha eseguito una ricerca,
+                 * esegue il corpo else se invece non ha eseguito una ricerca
+                 */
+                if(isFilterdListUsed) {
+                    mFilteredList = mAdapter.getList();                 //Prende la lista di account che sta usando l'adapter
+                    mToChange = mFilteredList.get(position);            //Estrae l'account dalla lista usata dall'adapter
+                    realIndex = mAccountList.indexOf(mToChange);        //Salva l'indice dell'account della lista principale
+                    mAccountList.remove(realIndex);                     //Rimuove l'account dalla lista principale
+                    mFilteredList.remove(position);                     //Rimuove l'account dalla lista filtrata
+                } else {
+                    mToChange = mAccountList.get(position);             //Estrae l'account corrispondente dalla lista
+                    mAccountList.remove(position);                      //Chiama la funzione che esegue la rimozione dell'account
+                }
+
                 //Genera l'animazione di rimozione sul recyclerView
                 mAdapter.notifyItemRemoved(position);
+
                 //Mostra il dialog di conferma o annullamento dell'eliminazione
                 showConfirmDialog(position);
             }
@@ -133,10 +150,19 @@ public class AdminManagerActivity extends AppCompatActivity {
         removeAccount();
     }
 
-    // Se la risposta al dialog di conferma non è negativa ripristina l'account
+    // Se la risposta al dialog di conferma non è positiva ripristina l'account
     public void doNegativeClick(int position) {
-        mAccountList.add(position, mToChange);
-        mAdapter.notifyItemInserted(position);
+        /*
+         * Controlla ed esegue l'if se l'utente ha eseguito una ricerca,
+         * esegue il corpo else se invece non ha eseguito una ricerca
+         */
+        if(isFilterdListUsed) {
+            mFilteredList.add(position, mToChange);     //Aggiunge l'account nella lista filtrata nella posizione originale
+            mAccountList.add(realIndex, mToChange);     //Aggiunge l'account nella lista principale nella posizione originale
+        } else {
+            mAccountList.add(position, mToChange);      //Aggiunge l'account nella lista principale nella posizione originale
+        }
+        mAdapter.notifyItemInserted(position);          //Genera l'animazione di inserimento sul recyclerView
     }
 
     /*
@@ -148,9 +174,17 @@ public class AdminManagerActivity extends AppCompatActivity {
      * e di conferma (doPositiveClick())
      */
     public void controlDelete(int position) {
+        //Se l'eliminazione non è stata confermata:
         if(!isDeleteConfirmed) {
-            if(position >= mAccountList.size() || !mAccountList.get(position).equals(mToChange)) {
-                doNegativeClick(position);
+            //Se il recyclerView sta mostrando una lista filtrata esegue i controlli su quella lista, altrimenti sulla principale
+            if(isFilterdListUsed) {
+                if(position >= mFilteredList.size() || !mFilteredList.get(position).equals(mToChange)) {
+                    doNegativeClick(position);
+                }
+            } else {
+                if (position >= mAccountList.size() || !mAccountList.get(position).equals(mToChange)) {
+                    doNegativeClick(position);
+                }
             }
         }
     }
@@ -206,7 +240,13 @@ public class AdminManagerActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                filter(s.toString());
+                if(s.toString().isEmpty()) {
+                    mAdapter.filterList(mAccountList);
+                    isFilterdListUsed = false;
+                } else {
+                    filter(s.toString());
+                    isFilterdListUsed = true;
+                }
             }
         });
 

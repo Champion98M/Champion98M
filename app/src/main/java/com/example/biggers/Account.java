@@ -18,7 +18,7 @@ public class Account implements Serializable, Comparable<Account> {
     public static final Account admin = new Account(
             "admin",
             "admin",
-            "Villanova",
+            "Villanova Strisaili",
             "21 Novembre 1998",
             true);
     /*
